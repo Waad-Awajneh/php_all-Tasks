@@ -715,9 +715,9 @@ echo "<hr>";
 
 for ($x = 1; $x <= 5; $x++) {
     for ($y = 1; $y <= 5; $y++) {
-        IF($x==$y){
+        if ($x == $y) {
             echo $x;
-        }else echo "0";
+        } else echo "0";
         echo " ";
     }
     echo "\n";
@@ -738,16 +738,15 @@ echo "<hr>";
 
 
 echo "<hr>";
-function factorial( $num ){
-$fact=1;
-for ($x = 1; $x <= 5; $x++) {
-   $fact*=$x; 
- 
+function factorial($num)
+{
+    $fact = 1;
+    for ($x = 1; $x <= 5; $x++) {
+        $fact *= $x;
+    }
+    echo "the factorial is $num : $fact";
 }
-echo "the factorial is $num : $fact";
-
-}
-factorial( 5);
+factorial(5);
 echo "<hr>";
 
 
@@ -758,27 +757,26 @@ echo "<hr>";
 
 // Expected Output: 0, 1, 1, 2, 3, 5, 8, 13, 21, …
 
-function fibonacci($len){
-   $num1=0;
-   $num2=1;
-   if ($len<=0){
-    print("invalid input");
-   }
-   if ($len==1){
-    print("Fibonacci sequence upto".$len.":".$num1);
-   }
-   if ($len==2){
-    print("Fibonacci sequence upto".$len.":".$num1.",".$num2);
-   }
-   print("Fibonacci sequence upto".$len.":");
-    for ($x =0; $x <= $len; $x++) {
-    print($num1.",\t");
-   $fab= $num1+ $num2;
-   $num1=$num2;
-   $num2=$fab;
-  
- }
-
+function fibonacci($len)
+{
+    $num1 = 0;
+    $num2 = 1;
+    if ($len <= 0) {
+        print("invalid input");
+    }
+    if ($len == 1) {
+        print("Fibonacci sequence upto" . $len . ":" . $num1);
+    }
+    if ($len == 2) {
+        print("Fibonacci sequence upto" . $len . ":" . $num1 . "," . $num2);
+    }
+    print("Fibonacci sequence upto" . $len . ":");
+    for ($x = 0; $x <= $len; $x++) {
+        print($num1 . ",\t");
+        $fab = $num1 + $num2;
+        $num1 = $num2;
+        $num2 = $fab;
+    }
 }
 
 echo "<hr>";
@@ -803,8 +801,8 @@ function countCinString($str)
             $count++;
         }
     }
-   
-   ECHO " C count = $count";
+
+    echo " C count = $count";
 }
 echo "<hr>";
 
@@ -850,16 +848,14 @@ echo "<hr>";
 function createTable()
 {
     echo "<table style=\"padding:100px,  border-spacing: 0px\" >";
-    for ($i = 1; $i <=6; $i++) {
- 
-        for ($j = 1; $j <= 5; $j++) {
-             echo "<tr>";
-                         echo "<td>" ."$i * $j = ". $i * $j . "</td>";
+    for ($i = 1; $i <= 6; $i++) {
 
-          echo "</tr>";
+        for ($j = 1; $j <= 5; $j++) {
+            echo "<tr>";
+            echo "<td>" . "$i * $j = " . $i * $j . "</td>";
+
+            echo "</tr>";
         }
-       
-       
     }
     echo "</table>";
 }
@@ -885,18 +881,16 @@ echo "<hr>";
 
 function fizzBuzz()
 {
-    for ($i = 1; $i <=50; $i++) {
- if($i%3==0&&$i%5==0){
-    echo "fizzBuzz \t";
- }elseif($i%3==0){
-    echo "fizz \t";
- }elseif($i%5==0){
-    echo "Buzz \t";
- }else{
-    echo $i ."\t";
- }
-       
-       
+    for ($i = 1; $i <= 50; $i++) {
+        if ($i % 3 == 0 && $i % 5 == 0) {
+            echo "fizzBuzz \t";
+        } elseif ($i % 3 == 0) {
+            echo "fizz \t";
+        } elseif ($i % 5 == 0) {
+            echo "Buzz \t";
+        } else {
+            echo $i . "\t";
+        }
     }
 }
 echo "<hr>";
@@ -918,20 +912,18 @@ echo "<hr>";
 // 4 5 6
 // 7 8 9 10
 // 11 12 13 14 15
-function  floydTriangle($n){
-$num=1;
-for($x=1;$x<=$n;$x++)
+function  floydTriangle($n)
 {
-   for ($y=1;$y<=$x;$y++)
-    {
-	 echo $num++;
-	    if($y< $x)
-		 {
-		   echo " ";
-		 }
-     }
- echo "\n";
-}
+    $num = 1;
+    for ($x = 1; $x <= $n; $x++) {
+        for ($y = 1; $y <= $x; $y++) {
+            echo $num++;
+            if ($y < $x) {
+                echo " ";
+            }
+        }
+        echo "\n";
+    }
 }
 
 echo "<hr>";
@@ -956,35 +948,32 @@ echo "<hr>";
 //      A
 
 $arr = range('A', 'E');
-$size = 5;
-// $char = $arr[0];   
-// upside pyramid
-for ($i = 1; $i <= $size; $i++) {
-    $char = $arr[0];  
-    // printing spaces
-    for ($j = $size/2; $j > $i; $j--) {
-        echo " ";
-    }
-    // printing star
-    for ($k = 0; $k < $i * 2 - 1; $k++,$char++) {
-        echo $char;
-    }
-    echo "<br>";
-}
-// downside pyramid
-for ($i = 1; $i <= $size - 1; $i++) {
-    // printing spaces
-    $char = $arr[0];  
-    for ($j = 0; $j < $i/2; $j++) {
-        echo " ";
-    }
-    // printing star
-    for ($k = ($size - $i) * 2 - 1; $k > 0; $k--,$char++) {
-        echo $char;
-    }
-    echo "<br>";
-}
+echo"<hr>";
+print_pattern($arr,5);
+echo"<hr>";
+function print_pattern(&$arr,$size){
 
+for ($i = 1; $i <= $size; $i++) {
+    $char = $arr[0];
+    for ($j = $size; $j > $i; $j--) {
+        echo " ";
+    }
+    for ($k = 0; $k < $i * 2 - 1; $k++, $char++) {
+        echo $char;
+    }
+    echo "<br>";
+}
+for ($i = 1; $i <= $size - 1; $i++) {
+    $char = $arr[0];
+    for ($j = 0; $j < $i; $j++) {
+        echo " ";
+    }
+    for ($k = ($size - $i) * 2 - 1; $k > 0; $k--, $char++) {
+        echo $char;
+    }
+    echo "<br>";
+}
+}
 
 
 
