@@ -84,7 +84,7 @@ Create a To-Do List Page. -->
 
     <div>
         <h1>TO DO LIST</h1>
-        <form action="index.php" method="post" id="form">
+        <form action="forms.php" method="post" id="form">
             <p>
                 <input type="text" name="text"> 
                 <input  type="submit" value ="add">

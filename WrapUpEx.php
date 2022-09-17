@@ -89,88 +89,88 @@ echo "</pre>";
 // echo $mycalc- > add(); // Displays 18
 // echo $mycalc- > multiply()
 
-class MyCalculator
-{
-    protected $num1, $num2;
-    function __construct($num1, $num2)
-    {
-        $this->num1 = $num1;
-        $this->num2 = $num2;
-    }
+// class MyCalculator
+// {
+//     protected $num1, $num2;
+//     function __construct($num1, $num2)
+//     {
+//         $this->num1 = $num1;
+//         $this->num2 = $num2;
+//     }
 
 
-    function __destruct()
-    {
-        echo <<<"Answer"
-    <pre>
-    THe end of all WarpUp tasks <br>
-    </pre>
-    Answer;
-    }
+//     function __destruct()
+//     {
+//         echo <<<"Answer"
+//     <pre>
+//     THe end of all WarpUp tasks <br>
+//     </pre>
+//     Answer;
+//     }
 
-    public function add()
-    {
-        return $this->num1 + $this->num2;
-    }
-    public function sub()
-    {
-        return $this->num1 - $this->num2;
-    }
+//     public function add()
+//     {
+//         return $this->num1 + $this->num2;
+//     }
+//     public function sub()
+//     {
+//         return $this->num1 - $this->num2;
+//     }
 
-    public function multiply()
-    {
-        return $this->num1 * $this->num2;
-    }
+//     public function multiply()
+//     {
+//         return $this->num1 * $this->num2;
+//     }
 
-    public function div()
-    {
-        return $this->num1 / $this->num2;
-    }
-}
+//     public function div()
+//     {
+//         return $this->num1 / $this->num2;
+//     }
+// }
 
-class Scientific extends MyCalculator{
-    protected $num1, $num2;
-function __construct( $num1, $num2){
-    MyCalculator::__construct( $num1, $num2);
-}
+// class Scientific extends MyCalculator{
+//     protected $num1, $num2;
+// function __construct( $num1, $num2){
+//     MyCalculator::__construct( $num1, $num2);
+// }
 
-public function power()
-{
-    return pow($this->num1 , $this->num2);
-}
+// public function power()
+// {
+//     return pow($this->num1 , $this->num2);
+// }
 
-function __destruct()
-{
-    echo <<<"Answer"
-<pre>
-THe end of Scientific class <br>
-</pre>
-Answer;
-}
-
-
-}
-
-$mycalc = new MyCalculator( 10, 2);
-$cal2= new Scientific(10,2);
-echo "<pre>";
-echo <<<"Answer"
-<pre>
-Q5: Write a PHP Calculator class that will accept two values as arguments, then add them, subtract them, multiply them together, or divide them on request. 
-</pre>
-Answer;
-echo "</pre>";
+// function __destruct()
+// {
+//     echo <<<"Answer"
+// <pre>
+// THe end of Scientific class <br>
+// </pre>
+// Answer;
+// }
 
 
-echo "parent class Add & sub (10,2) <br>";
+// }
 
-echo $mycalc-> add()."<br>"; 
-echo $mycalc-> sub()."<br>";
+// $mycalc = new MyCalculator( 10, 2);
+// $cal2= new Scientific(10,2);
+// echo "<pre>";
+// echo <<<"Answer"
+// <pre>
+// Q5: Write a PHP Calculator class that will accept two values as arguments, then add them, subtract them, multiply them together, or divide them on request. 
+// </pre>
+// Answer;
+// echo "</pre>";
 
-echo "child class Add & sub & power (10,2) <br>";
-echo $cal2-> add()."<br>"; 
-echo $cal2-> multiply()."<br>";
-echo $cal2-> power()."<br>"; 
+
+// echo "parent class Add & sub (10,2) <br>";
+
+// echo $mycalc-> add()."<br>"; 
+// echo $mycalc-> sub()."<br>";
+
+// echo "child class Add & sub & power (10,2) <br>";
+// echo $cal2-> add()."<br>"; 
+// echo $cal2-> multiply()."<br>";
+// echo $cal2-> power()."<br>"; 
 
 
 
